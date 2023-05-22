@@ -38,7 +38,8 @@ class DatasetHandler:
 
             nsamples = cfg.task.n
             if i > 0:
-                nsamples *= cfg.task.m_n
+                # nsamples *= cfg.task.m_n 
+                nsamples = cfg.task.m_n # passing m through m_n
             nsamples = int(nsamples)
 
             if nsamples > 0:

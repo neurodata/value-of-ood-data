@@ -89,7 +89,7 @@ class MultipleEnvironmentMNIST(MultipleDomainDataset):
             raise ValueError('Data directory not specified!')
 
         if train:
-            original_dataset_tr = MNIST(root, train=True, download=False)
+            original_dataset_tr = MNIST(root, train=True, download=True)
             original_images = original_dataset_tr.data
             original_labels = original_dataset_tr.targets
         else:

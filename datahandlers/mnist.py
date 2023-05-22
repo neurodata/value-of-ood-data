@@ -55,6 +55,6 @@ class RotatedMNISTHandler(DatasetHandler):
             train_transform = vanilla_transform
         test_transform = vanilla_transform
 
-        angles = [0, cfg.task.angle]
+        angles = [0, cfg.task.ood_env]
         self.trainset = RotatedMNISTDataset(angles, train=True, transform=train_transform)
         self.testset = RotatedMNISTDataset([0], train=False, transform=test_transform)
