@@ -1,0 +1,1 @@
+python3 train.py -m seed=10 reps=10 deploy=True device=cuda:0 tag=1-effect-of-target-sample-size/mnist task.dataset=rotated_mnist net=conv task.target_env=0 task.ood_env=30 task.task_map=[[0,1,2,3,4,5,6,7,8,9]] task.target=0 task.ood=[0] task.n=10,20,40,60,80,100 task.m_n=200,300,400,500 hp.bs=16 hp.epochs=150 hydra.launcher.n_jobs=10
