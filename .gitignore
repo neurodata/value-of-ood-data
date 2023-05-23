@@ -80,6 +80,7 @@ target/
 /dev/
 /wandb/
 /logs/
+/multirun/
 multirun.yaml
 
 # Mac OS-specific storage files
