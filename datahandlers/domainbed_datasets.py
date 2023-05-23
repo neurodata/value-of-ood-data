@@ -8,6 +8,7 @@ import torchvision.datasets.folder
 from torch.utils.data import TensorDataset, Subset
 from torchvision.datasets import MNIST, ImageFolder
 from torchvision.transforms.functional import rotate
+import pandas as pd
 
 # from wilds.datasets.camelyon17_dataset import Camelyon17Dataset
 # from wilds.datasets.fmow_dataset import FMoWDataset
@@ -89,11 +90,11 @@ class MultipleEnvironmentMNIST(MultipleDomainDataset):
             raise ValueError('Data directory not specified!')
 
         if train:
-            original_dataset_tr = MNIST(root, train=True, download=True)
+            original_dataset_tr = MNIST(root, train=True, download=False)
             original_images = original_dataset_tr.data
             original_labels = original_dataset_tr.targets
         else:
-            original_dataset_te = MNIST(root, train=False, download=True)
+            original_dataset_te = MNIST(root, train=False, download=False)
             original_images = original_dataset_te.data
             original_labels = original_dataset_te.targets
 
@@ -234,9 +235,12 @@ class PACS(MultipleEnvironmentImageFolder):
 class DomainNet(MultipleEnvironmentImageFolder):
     CHECKPOINT_FREQ = 1000
     ENVIRONMENTS = ["clip", "info", "paint", "quick", "real", "sketch"]
-    def __init__(self, root, test_envs, hparams):
-        self.dir = os.path.join(root, "domain_net/")
-        super().__init__(self.dir, test_envs, hparams['data_augmentation'], hparams)
+    def __init__(self, root, test_envs, train=True, hparams=None):
+        if train:
+            self.dir = os.path.join(root, "domainnet/train")
+        else:
+            self.dir = os.path.join(root, "domainnet/test")
+        super().__init__(self.dir, test_envs, False, hparams)
 
 class OfficeHome(MultipleEnvironmentImageFolder):
     CHECKPOINT_FREQ = 300
