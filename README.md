@@ -9,3 +9,5 @@ In particular, we prove that generalization error can improve with small amounts
 We analytically demonstrate these results via  Fisher's Linear Discriminant on synthetic datasets, and empirically demonstrate them via deep networks on 
 computer vision benchmarks such as MNIST, CIFAR-10, CINIC-10, PACS and DomainNet. Moreover, in the idealistic setting where we know which samples are OOD, 
 we show that these non-monotonic trends can be exploited using an appropriately weighted objective of the target and OOD empirical risk.
+
+![alt text](https://github.com/Laknath1996/value-of-ood-data/blob/master/notebooks/figures/paper/1-summary-plot.pdf)
