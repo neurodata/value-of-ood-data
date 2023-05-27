@@ -10,4 +10,27 @@ We analytically demonstrate these results via  Fisher's Linear Discriminant on s
 computer vision benchmarks such as MNIST, CIFAR-10, CINIC-10, PACS and DomainNet. Moreover, in the idealistic setting where we know which samples are OOD, 
 we show that these non-monotonic trends can be exploited using an appropriately weighted objective of the target and OOD empirical risk.
 
-![alt text](https://github.com/Laknath1996/value-of-ood-data/blob/master/notebooks/figures/paper/1-summary-plot.pdf)
+<p align="center">
+<img src="https://github.com/Laknath1996/value-of-ood-data/blob/master/assets/1-summary-plot.png" width="600">
+</p>
+
+<p align="center">
+<img src="https://github.com/Laknath1996/value-of-ood-data/blob/master/assets/9-simdata-plot.png" width="600">
+</p>
+
+<p align="center">
+<img src="https://github.com/Laknath1996/value-of-ood-data/blob/master/assets/8-realdata-plot.png" width="600">
+</p>
+
+If you use this code/paper for your research, please consider citing,
+
+```
+@article{de2022value,
+  title={The Value of Out-of-Distribution Data},
+  author={De Silva, Ashwin and Ramesh, Rahul and Priebe, Carey E and Chaudhari, Pratik and Vogelstein, Joshua T},
+  journal={arXiv preprint arXiv:2208.10967},
+  year={2022}
+}
+```
+
+
