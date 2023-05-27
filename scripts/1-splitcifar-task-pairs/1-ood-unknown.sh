@@ -1,0 +1,1 @@
+python3 train.py -m seed=10 reps=10 deploy=True device=cuda:3 tag=1-splitcifar-task-pairs/ood-unknown task.dataset=split_cifar10 net=wrn10_2 task.custom_sampler=False task.target=0,1,2,3,4 task.ood=[0],[1],[2],[3],[4] task.m_n=0,1,2,3,4,5,10,20 task.augment=False

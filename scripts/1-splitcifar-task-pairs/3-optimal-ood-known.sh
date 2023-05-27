@@ -1,0 +1,5 @@
+# tune
+python3 tune_alpha.py -m seed=10 deploy=True device=cuda:3 is_multihead=False tag=1-splitcifar-task-pairs/tune task.dataset=split_cifar10 net=wrn10_2 loss.tune_alpha=True loss.group_task_loss=True loss.alpha=0.5 loss.m_n_list=[0,1,2,3,4,5,10,20] task.custom_sampler=True task.beta=0.75 task.target=0,1,2,3,4 task.ood=[0],[1],[2],[3],[4] task.n=50 task.m_n=0 task.augment=False hp.bs=128 hp.epochs=100 hydra.launcher.n_jobs=10
+
+# train
+python3 train.py -m seed=10 reps=10 deploy=True device=cuda:1 tag=1-splitcifar-task-pairs/optimal-ood-known task.dataset=split_cifar10 net=wrn10_2 loss.group_task_loss=True loss.alpha=0.5 loss.use_opt_alpha=True loss.tune_alpha_tag:1-splitcifar-task-pairs/tune task.custom_sampler=True task.beta=0.75 task.target=0,1,2,3,4 task.ood=[0],[1],[2],[3],[4] task.n=50 task.m_n=0,1,2,3,4,5,10,20 task.augment=False hp.bs=128 hp.epochs=100 hydra.launcher.n_jobs=10

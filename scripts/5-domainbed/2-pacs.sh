@@ -1,0 +1,1 @@
+python3 train.py -m seed=10 reps=10 deploy=True device=cuda:3 is_multihead=False tag=5-domainbed/pacs task.dataset=pacs net=wrn16_4 task.custom_sampler=False task.target_env=P task.ood_env=P,A,C,S task.task_map=[[0,1,4]] task.target=0 task.ood=[0] task.n=10 task.m_n=0,1,2,3,4,5,6,7,8,9,10 task.augment=False hp.bs=16 hp.epochs=100 hydra.launcher.n_jobs=10

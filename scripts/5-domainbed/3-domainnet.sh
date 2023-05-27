@@ -1,0 +1,1 @@
+python3 train.py -m seed=10 deploy=True device=cuda:1 tag=5-domainbed/domainnet reps=3 task.target_env=real task.ood_env=quick,paint,sketch task.dataset=domainnet task.n=5 task.m_n=0,0.2,0.4,0.6,0.8,1,2,3 task.task_map=[[23,26,34,52,57,67,84,87,94,95,102,106,120,128,132,144,150,162,177,189,194,207,211,215,221,225,238,239,245,256,258,260,261,271,272,284,299,312,336,343]]

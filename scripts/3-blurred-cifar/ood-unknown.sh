@@ -1,0 +1,1 @@
+python3 train.py -m seed=10 reps=10 deploy=True device=cuda:2 tag=3-blurred-cifar/ood-unknown net=wrn10_2 task.dataset=blurred_cifar10 task.sigma=0 task.custom_sampler=False task.target=1 task.ood=[] task.m_n=0,1,2,3,4,5,10,20 task.augment=False
