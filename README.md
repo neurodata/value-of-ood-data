@@ -33,4 +33,15 @@ If you use this code/paper for your research, please consider citing,
 }
 ```
 
+### Directory Structure 
+```
+.
+├── config            # configuration file for the experiments 
+├── data              # data folders
+├── datahandlers      # datahandling scripts for different datasets
+├── net               # network scriprts
+├── notebooks         # jupyter notebooks
+├── scripts           # bash scripts for experiments
+└── utils             # network training scripts
+```
 
